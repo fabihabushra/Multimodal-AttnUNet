@@ -306,7 +306,7 @@ class FusionAttU_Net(nn.Module):
         d3 = self.Up_conv3_fusion(d3_input)
 
         d2_input = torch.cat((x1_dec[0], x2_dec[0], f1, self.Up2(d3)), dim=1)
-        d2 = self.Up_conva2_fusion(d2_input)
+        d2 = self.Up_conv2_fusion(d2_input)
 
         d1 = self.Conv_1x1(d2)
         return d1
